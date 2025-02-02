@@ -6,6 +6,8 @@
     <title>Formulário com Gráfico Radar - Bootstrap 5</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 
     <style>
         .form-container {
@@ -22,8 +24,6 @@
             /* Topo da página */
             width: 100%;
             /* Largura completa */
-            background: white;
-            /* Fundo branco para legibilidade */
             z-index: 1000;
             /* Certifica-se de que fica sobre outros conteúdos */
         }
@@ -32,11 +32,44 @@
             margin-top: 50px;
             /* Espaço para o conteúdo fixo no topo */
         }
+
+        .dark-mode {
+            background-color: #343a40;
+            /* Cor de fundo para o modo escuro */
+            color: #ffffff;
+            /* Cor de texto para o modo escuro */
+        }
+
+        .dark-mode .card {
+            background-color: #1e2125;
+            /* Cor de fundo dos cartões no modo escuro */
+            color: #ffffff;
+            /* Cor de texto para o modo escuro */
+        }
+
+        .dark-mode .card-header {
+            background-color: #343a40;
+            /* Cor de fundo do cabeçalho do cartão no modo escuro */
+            color: #ffffff;
+            /* Cor de texto do cabeçalho no modo escuro */
+        }
+
+        button.mode-switch {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            /* Posicionamento do botão no canto superior direito */
+            z-index: 2000;
+        }
     </style>
 
 </head>
 
 <body class="bg-light">
+    <button class="btn mode-switch" onclick="toggleMode()">
+        <i class="fas fa-sun" style="display: none;"></i>
+        <i class="fas fa-moon"></i>
+    </button>
     <div class="fixed-content">
         <div class="container mt-5">
             <h1 class="mb-3 text-center">Formulário de Avaliação de Violência contra Idosos</h1>

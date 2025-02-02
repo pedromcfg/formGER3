@@ -55,3 +55,35 @@ document.addEventListener("DOMContentLoaded", function() {
         return document.querySelectorAll(`input[id^='${seccaoPrefix}']:checked`).length;
     }
 });
+
+function toggleMode() {
+    var body = document.body;
+    var iconSun = document.querySelector('.fa-sun');
+    var iconMoon = document.querySelector('.fa-moon');
+
+    // Alternar as classes para trocar entre modos claro e escuro
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('bg-light');
+    body.classList.toggle('bg-dark');
+
+    var cards = document.querySelectorAll('.card');
+    var cardHeaders = document.querySelectorAll('.card-header');
+
+    if (body.classList.contains('dark-mode')) {
+        iconSun.style.display = "";
+        iconMoon.style.display = "none";
+        iconSun.style.color = "#ffffff";
+        body.style.backgroundColor = "#343a40";
+        body.style.color = "#ffffff";
+        cards.forEach(card => card.classList.add('dark-mode'));
+        cardHeaders.forEach(header => header.classList.add('dark-mode'));
+    } else {
+        iconSun.style.display = "none";
+        iconMoon.style.display = "";
+        body.style.backgroundColor = "white";
+        body.style.color = "black";
+        cards.forEach(card => card.classList.remove('dark-mode'));
+        cardHeaders.forEach(header => header.classList.remove('dark-mode'));
+    }
+}
+
