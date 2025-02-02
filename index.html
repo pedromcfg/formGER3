@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário com Gráfico Radar - Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .form-container {
+            height: 600px;
+            /* Altura fixa para a área do formulário */
+            overflow-y: auto;
+            /* Permite scroll vertical se o conteúdo exceder a altura */
+        }
+
+        .fixed-content {
+            position: fixed;
+            /* Mantém o conteúdo fixo */
+            top: 0;
+            /* Topo da página */
+            width: 100%;
+            /* Largura completa */
+            background: white;
+            /* Fundo branco para legibilidade */
+            z-index: 1000;
+            /* Certifica-se de que fica sobre outros conteúdos */
+        }
+
+        .content-below {
+            margin-top: 50px;
+            /* Espaço para o conteúdo fixo no topo */
+        }
+    </style>
+
+</head>
+
+<body class="bg-light">
+    <div class="fixed-content">
+        <div class="container mt-5">
+            <h1 class="mb-3 text-center">Formulário de Avaliação de Violência contra Idosos</h1>
+            <hr>
+        </div>
+        <div class="container content-below">
+            <div class="row">
+                <div class="col-md-6 form-container">
+                    <form id="formEscolhas">
+                        <!-- Secção 1: Violência Física -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                Violência Física
+                            </div>
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao1-1" class="form-check-input">
+                                    <label class="form-check-label" for="seccao1-1">Apresenta sinais de desidratação ou
+                                        desnutrição</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao1-2" class="form-check-input">
+                                    <label class="form-check-label" for="seccao1-2">Apresenta cuidados de saúde
+                                        inadequados</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao1-3" class="form-check-input">
+                                    <label class="form-check-label" for="seccao1-3">Demonstra medo de determinados
+                                        indivíduos ou resistência a ser tocada</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao1-4" class="form-check-input">
+                                    <label class="form-check-label" for="seccao1-4">Marcas de contenção nos pulsos ou
+                                        tornozelos</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao1-5" class="form-check-input">
+                                    <label class="form-check-label" for="seccao1-5">Lesões em ombros ou outras
+                                        articulações
+                                        deslocadas</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Secção 2: Violência Psicológica -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                Violência Psicológica
+                            </div>
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao2-1" class="form-check-input">
+                                    <label class="form-check-label" for="seccao2-1">Baixa autoestima</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao2-2" class="form-check-input">
+                                    <label class="form-check-label" for="seccao2-2">Dependência emocional</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao2-3" class="form-check-input">
+                                    <label class="form-check-label" for="seccao2-3">Estado depressivo</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao2-4" class="form-check-input">
+                                    <label class="form-check-label" for="seccao2-4">Distanciamento ou isolamento
+                                        social</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao2-5" class="form-check-input">
+                                    <label class="form-check-label" for="seccao2-5">Medo de estar na presença de outras
+                                        pessoas</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Secção 3: Violência Sexual -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                Violência Sexual
+                            </div>
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao3-1" class="form-check-input">
+                                    <label class="form-check-label" for="seccao3-1">Doenças venéreas ou infecções
+                                        genitais
+                                        inesperadas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao3-2" class="form-check-input">
+                                    <label class="form-check-label" for="seccao3-2">Hemorragia genital ou anal sem
+                                        explicação</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao3-3" class="form-check-input">
+                                    <label class="form-check-label" for="seccao3-3">Nódoas negras nos seios ou
+                                        genitais</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao3-4" class="form-check-input">
+                                    <label class="form-check-label" for="seccao3-4">Roupa interior rasgada, manchada ou
+                                        com
+                                        sangue</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Secção 4: Negligência / Abandono -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                Negligência / Abandono
+                            </div>
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao4-1" class="form-check-input">
+                                    <label class="form-check-label" for="seccao4-1">Falta de condições de
+                                        higiene</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao4-2" class="form-check-input">
+                                    <label class="form-check-label" for="seccao4-2">Falta de condições de segurança em
+                                        casa</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao4-3" class="form-check-input">
+                                    <label class="form-check-label" for="seccao4-3">Falta de cuidados médicos</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao4-4" class="form-check-input">
+                                    <label class="form-check-label" for="seccao4-4">Perda de peso</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao4-5" class="form-check-input">
+                                    <label class="form-check-label" for="seccao4-5">Vive em ambiente insalubre</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Secção 5: Violência Financeira / Económica -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                Violência Financeira / Económica
+                            </div>
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao5-1" class="form-check-input">
+                                    <label class="form-check-label" for="seccao5-1">Faz empréstimos ou contrai dívidas
+                                        para
+                                        beneficiar outros</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao5-2" class="form-check-input">
+                                    <label class="form-check-label" for="seccao5-2">Faz levantamentos bancários sem
+                                        explicação</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao5-3" class="form-check-input">
+                                    <label class="form-check-label" for="seccao5-3">Mudanças repentinas nos
+                                        beneficiários de
+                                        testamentos, seguros ou bens</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao5-4" class="form-check-input">
+                                    <label class="form-check-label" for="seccao5-4">Toma decisões abruptas sobre o
+                                        próprio
+                                        património</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="seccao5-5" class="form-check-input">
+                                    <label class="form-check-label" for="seccao5-5">Vive em ambiente insalubre</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="graficoRadar"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
