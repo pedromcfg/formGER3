@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
             labels: ['Violência Física', 'Violência Psicológica', 'Violência Sexual', 'Negligência / Abandono', 'Violência Financeira / Económica'],
             datasets: [{
                 label: 'Número de Itens Escolhidos por Secção',
-                data: [0, 0, 0, 0, 0],
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgb(255, 99, 132)',
